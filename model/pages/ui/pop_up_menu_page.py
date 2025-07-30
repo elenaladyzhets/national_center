@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, be
 import allure
 
 class PopUpMenuPage:
@@ -110,6 +110,47 @@ class PopUpMenuPage:
     def open_gallery_page(self):
         with allure.step ('Open gallery page'):
             browser.element('a.header-menu-list__title[href="/gallery"]').click()
+            return self
+
+    def close_pop_up_menu(self):
+        with allure.step ('Close pop up menu'):
+            browser.element('#burger-menu-close').should(be.visible).click()
+            return self
+
+    def change_language_ru_to_eng(self):
+        with allure.step ('Change language ru to eng'):
+            browser.element('a.header-menu__languages-elem').should(have.text('ENG')).click()
+            return self
+
+    def change_language_eng_to_ru(self):
+        with allure.step ('Change language eng to ru'):
+            browser.element('a.header-menu__languages-elem').should(have.text('RU')).click()
+            return self
+
+    def search_from_pop_up_menu(self):
+        with allure.step ('Search from pop up menu'):
+            browser.element('button.js-search-button-header-menu').click()
+            browser.element('input.search-input-header-menu').should(be.visible).set_value('Экскурсия').press_enter()
+            return self
+
+    def link_to_telegram(self):
+        with allure.step ('Link to telegram '):
+            browser.element('a[href="https://t.me/gowithRussia"]').should(be.visible).click()
+            return self
+
+    def link_to_vk(self):
+        with allure.step ('Link to vkontakte'):
+            browser.element('a[href="https://vk.com/gowithrussia"]').should(be.visible).click()
+            return self
+
+    def link_to_ok(self):
+        with allure.step ('Link to odnoklassniki'):
+            browser.element('a[href="https://ok.ru/gowithrussia"]').should(be.visible).click()
+            return self
+
+    def link_to_dzen(self):
+        with allure.step ('Link to dzen'):
+            browser.element('a[href="https://dzen.ru/gowithrussia"]').should(be.visible).click()
             return self
 
 pop_up_menu_page = PopUpMenuPage()

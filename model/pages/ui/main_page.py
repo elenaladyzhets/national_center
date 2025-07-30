@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, be
 import allure
 
 
@@ -7,6 +7,11 @@ class MainPage:
     def open(self):
         with allure.step('Open main page'):
             browser.open('')
+            return self
+
+    def opened(self):
+        with allure.step('Opened main page'):
+            browser.element('h2.russia-news__title').should(have.text('НОВОСТИ'))
             return self
 
     def open_news_page_from_main_page(self):
@@ -94,8 +99,31 @@ class MainPage:
             return self
 
     def open_pop_up_menu(self):
-        with allure.step ('Open contacts page from maim page'):
+        with allure.step ('Open contacts page from main page'):
             browser.element('#burger-menu').click()
             return self
+
+    def change_language_ru_to_eng(self):
+        with allure.step ('change language ru to eng'):
+            browser.element('h2.russia-news__title').should(have.text('NEWS'))
+            return self
+
+    def search_available_from_heder_menu(self):
+        with allure.step ('Search from pop up menu'):
+            browser.element('button.js-search-button').click()
+            browser.element('input.search-input').should(be.visible).set_value('Экскурсия').press_enter()
+            return self
+
+    def search_unavailable_from_heder_menu(self):
+        with allure.step ('Search from pop up menu'):
+            browser.element('button.js-search-button').click()
+            browser.element('input.search-input').should(be.visible).set_value('Араппоапгепоп').press_enter()
+            return self
+
+    def log_in_from_heder(self):
+        with allure.step('Log in from heder'):
+            browser.element('button.js-auth-open').should(be.visible).click()
+            return self
+
 
 main_page = MainPage()

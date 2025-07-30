@@ -1,5 +1,6 @@
 import allure
 
+from model.pages.ui import search_page
 from model.pages.ui.future_page import future_page
 from model.pages.ui.gallery_page import gallery_page
 from model.pages.ui.media_about_us_page import media_about_us_page
@@ -18,9 +19,11 @@ from model.pages.ui.news_page import news_page
 from model.pages.ui.events_page import events_page
 from model.pages.ui.photobank_page import photobank_page
 from model.pages.ui.pop_up_menu_page import pop_up_menu_page
+from model.pages.ui.socials_page import socials_page
 from model.pages.ui.victory_routes_page import victory_routes_page
 from model.pages.ui.wedding_page import wedding_page
 from model.pages.ui.dialog_page import dialog_page
+from model.pages.ui.search_page import search_page
 
 
 @allure.epic('UI. Pop up menu')
@@ -253,3 +256,93 @@ def test_open_gallery_page():
     main_page.open_pop_up_menu()
     pop_up_menu_page.open_gallery_page()
     gallery_page.opened_gallery_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Close pop up menu')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_close_pop_up_menu():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.close_pop_up_menu()
+    main_page.opened()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Change language')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_change_language_ru_to_eng():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.change_language_ru_to_eng()
+    main_page.change_language_ru_to_eng()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Change language')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_change_language_eng_to_ru():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.change_language_ru_to_eng()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.change_language_eng_to_ru()
+    main_page.opened()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Search from pop up menu')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_search_available_result():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.search_from_pop_up_menu()
+    search_page.opened_available_search_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Link to telegram')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_link_to_tg():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.link_to_telegram()
+    socials_page.open_telegram_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Link to vk')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_link_to_vk():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.link_to_vk()
+    socials_page.open_vk_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Link to ok')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_link_to_ok():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.link_to_ok()
+    socials_page.open_ok_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Link to dzen')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_link_to_dzen():
+    main_page.open()
+    main_page.open_pop_up_menu()
+    pop_up_menu_page.link_to_dzen()
+    socials_page.open_dzen_page()

@@ -14,6 +14,7 @@ from model.pages.ui.main_page import main_page
 from model.pages.ui.news_page import news_page
 from model.pages.ui.events_page import events_page
 from model.pages.ui.photobank_page import photobank_page
+from model.pages.ui.search_page import search_page
 from model.pages.ui.victory_routes_page import victory_routes_page
 from model.pages.ui.wedding_page import wedding_page
 
@@ -179,3 +180,23 @@ def test_open_contacts_page():
     main_page.open()
     main_page.open_contacts_page_from_main_page()
     contacts_page.opened_contscts_page()
+
+@allure.epic('UI. heder')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Search from pop up menu')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_search_available_result():
+    main_page.open()
+    main_page.search_available_from_heder_menu()
+    search_page.opened_available_search_page()
+
+@allure.epic('UI. heder')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Search from pop up menu')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_search_unavailable_result():
+    main_page.open()
+    main_page.search_unavailable_from_heder_menu()
+    search_page.opened_unavailable_search_page()
