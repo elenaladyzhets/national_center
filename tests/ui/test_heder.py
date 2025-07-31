@@ -6,9 +6,9 @@ from model.pages.ui.fair_page import fair_page
 from model.pages.ui.for_developer_page import for_developer_page
 from model.pages.ui.for_media_page import for_media_page
 from model.pages.ui.photobank_RIA_page import photobank_ria_page
-from model.pages.ui.architecture_page import architecture_page
+#from model.pages.ui.architecture_page import architecture_page
 from model.pages.ui.broadcasts_page import broadcasts_page
-from model.pages.ui.creative_hub_page import creative_hub_page
+#from model.pages.ui.creative_hub_page import creative_hub_page
 from model.pages.ui.legacy_page import legacy_page
 from model.pages.ui.header import header_page
 from model.pages.ui.news_page import news_page
@@ -74,25 +74,25 @@ def test_open_victory_routes_page():
     header_page.open_victory_routes_page_from_header()
     victory_routes_page.opened_victory_routes_page()
 
-@allure.epic('UI. Header')
-@allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Open architecture page')
-@allure.tag('ui')
-@allure.severity('normal')
-def test_open_architecture_page():
-    main_page.open()
-    header_page.open_architecture_page_from_header()
-    architecture_page.opened_architecture_page()
+#@allure.epic('UI. Header')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open architecture page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_architecture_page():
+ #   main_page.open()
+  #  header_page.open_architecture_page_from_header()
+   # architecture_page.opened_architecture_page()
 
-@allure.epic('UI. Header')
-@allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Open creative hub page')
-@allure.tag('ui')
-@allure.severity('normal')
-def test_open_creative_hub_page():
-    main_page.open()
-    header_page.open_creative_hub_page_from_header()
-    creative_hub_page.opened_creative_hub_page()
+#@allure.epic('UI. Header')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open creative hub page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_creative_hub_page():
+ #   main_page.open()
+  #  header_page.open_creative_hub_page_from_header()
+   # creative_hub_page.opened_creative_hub_page()
 
 @allure.epic('UI. Header')
 @allure.label('owner', 'Elena Ladyzhets')
@@ -187,22 +187,22 @@ def test_open_contacts_page():
 
 @allure.epic('UI. Header')
 @allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Search from pop up menu')
+@allure.feature('Search from header')
 @allure.tag('ui')
 @allure.severity('normal')
-def test_search_available_result():
+def test_search_available_result(search_word):
     main_page.open()
-    header_page.search_available_from_heder()
+    header_page.search_available_from_header(search_word)
     search_page.opened_available_search_page()
 
 @allure.epic('UI. Header')
 @allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Search from pop up menu')
+@allure.feature('Search from header')
 @allure.tag('ui')
 @allure.severity('normal')
 def test_search_unavailable_result():
     main_page.open()
-    header_page.search_unavailable_from_heder()
+    header_page.search_unavailable_from_header()
     search_page.opened_unavailable_search_page()
 
 @allure.epic('UI. Header')

@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, be
 import allure
 
 class FuturePage:
@@ -9,7 +9,7 @@ class FuturePage:
 
     def opened_future_page(self):
         with allure.step ('Check open future page'):
-            browser.element('.intro__future').should(have.text('СОЗДАВАЯ БУДУЩЕЕ'))
+            browser.element('.intro__future').should(be.visible).should(have.text('СОЗДАВАЯ БУДУЩЕЕ'))
             return self
 
 

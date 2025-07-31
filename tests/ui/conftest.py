@@ -7,6 +7,9 @@ from selene import browser
 from utils import attach
 from dotenv import load_dotenv
 
+@pytest.fixture
+def search_word():
+    return "Экскурсия"
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
