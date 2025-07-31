@@ -14,7 +14,7 @@ from model.pages.ui.architecture_page import architecture_page
 from model.pages.ui.broadcasts_page import broadcasts_page
 from model.pages.ui.creative_hub_page import creative_hub_page
 from model.pages.ui.legacy_page import legacy_page
-from model.pages.ui.main_page import main_page
+from model.pages.ui.header import main_page
 from model.pages.ui.news_page import news_page
 from model.pages.ui.events_page import events_page
 from model.pages.ui.photobank_page import photobank_page
