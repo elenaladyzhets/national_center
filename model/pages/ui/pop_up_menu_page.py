@@ -74,7 +74,7 @@ class PopUpMenuPage:
 
     def open_dialog_page(self):
         with allure.step('Open dialog page'):
-            browser.element('a.header-menu-list__title[href="/dialog"]').should(be.visible).click()
+            browser.element('a.header-menu-list__title[href="https://dialog.russia.ru/"]').should(be.visible).click()
             return self
 
     def open_for_media_page(self):
@@ -110,6 +110,27 @@ class PopUpMenuPage:
     def open_gallery_page(self):
         with allure.step ('Open gallery page'):
             browser.element('a.header-menu-list__title[href="/gallery"]').should(be.visible).click()
+            return self
+
+    def open_guides_kids_page(self):
+        with allure.step ('Open guides kids page'):
+            browser.element('a.header-menu-list__title[href="https://guides.kids.russia.ru"]').with_(timeout=10).should(be.visible).click()
+            return self
+
+    def open_go_with_Russia_page(self):
+        with allure.step ('Open go with Russia page'):
+            browser.element('a.header-menu-list__title[href="https://russia.ru/gowithRussia"]').should(be.visible).click()
+            return self
+
+    def open_fashion_Russia_page(self):
+        with allure.step ('Open fashion Russia page'):
+            browser.element('a.header-menu-list__title[href="https://modnayarussia.ru/"]').should(be.visible).click()
+            browser.element('span.t-btnflex__text').should(have.text('Даю согласие')).click()
+            return self
+
+    def open_creative_hub_gallery_page(self):
+        with allure.step ('Open creative hub gallery page'):
+            browser.element('a.header-menu-list__title[href="https://russia.ru/creative_hub_gallery"]').should(be.visible).click()
             return self
 
     def close_pop_up_menu(self):

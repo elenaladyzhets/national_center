@@ -16,10 +16,11 @@ from model.pages.ui.events_page import events_page
 from model.pages.ui.photobank_page import photobank_page
 from model.pages.ui.search_page import search_page
 from model.pages.ui.victory_routes_page import victory_routes_page
-from model.pages.ui.wedding_page import wedding_page
+#from model.pages.ui.wedding_page import wedding_page
 from model.pages.ui.main_page import main_page
 from model.pages.ui.personal_cabinet_page import personal_cabinet_page
-
+from model.pages.ui.guides_kids_page import guides_kids_page
+from model.pages.ui.go_with_Russia_page import go_with_Russia_page
 
 
 
@@ -56,13 +57,33 @@ def test_open_legacy_page():
 
 @allure.epic('UI. Header')
 @allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Open wedding page')
+@allure.feature('Open guides kids page')
 @allure.tag('ui')
 @allure.severity('normal')
-def test_open_wedding_page():
+def test_open_guides_kids_page():
     main_page.open()
-    header_page.open_wedding_page_from_header()
-    wedding_page.opened_wedding_page()
+    header_page.open_guides_kids_page_from_header()
+    guides_kids_page.opened_guides_kids_page()
+
+@allure.epic('UI. Header')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Open go with Russia page')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_open_go_with_Russia_page():
+    main_page.open()
+    header_page.open_go_with_Russia_page_from_header()
+    go_with_Russia_page.opened_go_with_Russia_page()
+
+# @allure.epic('UI. Header')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open wedding page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_wedding_page():
+ #   main_page.open()
+  #  header_page.open_wedding_page_from_header()
+   # wedding_page.opened_wedding_page()
 
 @allure.epic('UI. Header')
 @allure.label('owner', 'Elena Ladyzhets')
@@ -115,15 +136,15 @@ def test_open_photobank_page():
     header_page.open_photobank_page_from_header()
     photobank_page.opened_photobank_page()
 
-@allure.epic('UI. Header')
-@allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Open  photobank directorate page')
-@allure.tag('ui')
-@allure.severity('normal')
-def test_open_photobank_directorate_page():
-    main_page.open()
-    header_page.open_photobank_directorate_page_from_header()
-    photobank_page.opened_photobank_page()
+#@allure.epic('UI. Header')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open  photobank directorate page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_photobank_directorate_page():
+ #   main_page.open()
+  #  header_page.open_photobank_directorate_page_from_header()
+   # photobank_page.opened_photobank_page()
 
 @allure.epic('UI. Header')
 @allure.label('owner', 'Elena Ladyzhets')

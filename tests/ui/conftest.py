@@ -24,7 +24,7 @@ def setting_browser():
 
     options = Options()
     options.add_argument('--start-maximized')
-    # options.add_argument('--headless')  # Если нужен headless, раскомментируй
+    options.add_argument('--headless')  # Если нужен headless, раскомментируй
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 

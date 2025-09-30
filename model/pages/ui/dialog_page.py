@@ -9,7 +9,7 @@ class DialogPage:
 
     def opened_dialog_page(self):
         with allure.step ('Check open dialog page'):
-            browser.element('.js-open-form-popup').should(have.text('СТАТЬ УЧАСТНИКОМ ОТКРЫТОГО ДИАЛОГА'))
+            browser.element('.btn.btn_orange.js-popup-close').should(have.exact_text('СТАТЬ ЭКСПЕРТОМ'))
             return self
 
 

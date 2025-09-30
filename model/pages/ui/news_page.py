@@ -5,6 +5,9 @@ class NewsPage:
     def open_news_page(self):
         with allure.step('Open news page'):
             browser.open('news')
+            browser.element('.regions-confirm').should(be.visible).click()
+            browser.element('.cookie-popup__button').should(be.visible).click()
+            browser.element('input.search__input').with_(timeout=15).should(be.visible)
             return self
 
     def opened_news_page(self):
@@ -15,7 +18,8 @@ class NewsPage:
     def valid_search(self,word):
         with allure.step('Check valid search'):
             browser.element('input.search__input').should(be.visible).set_value(word).press_enter()
-            results = browser.all('a.news-card__title, div.news-card__text').with_(timeout=10)
+            browser.element('a.news-card__title, div.news-card__text').with_(timeout=15).should(be.visible)
+            results = browser.all('a.news-card__title, div.news-card__text').with_(timeout=15)
             results.should(have.size_greater_than(0))
             texts = [el.get(query.text) for el in results]
 

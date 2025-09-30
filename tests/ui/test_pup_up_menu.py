@@ -1,7 +1,7 @@
 import allure
 
 from model.pages.ui import search_page
-from model.pages.ui.future_page import future_page
+#from model.pages.ui.future_page import future_page
 from model.pages.ui.gallery_page import gallery_page
 from model.pages.ui.media_about_us_page import media_about_us_page
 from model.pages.ui.photobank_exhibitions_Russia_page import photobank_exhib_russia_page
@@ -12,7 +12,7 @@ from model.pages.ui.for_media_page import for_media_page
 from model.pages.ui.photobank_RIA_page import photobank_ria_page
 # from model.pages.ui.architecture_page import architecture_page
 from model.pages.ui.broadcasts_page import broadcasts_page
-# from model.pages.ui.creative_hub_page import creative_hub_page
+from model.pages.ui.creative_hub_page import creative_hub_page
 from model.pages.ui.legacy_page import legacy_page
 from model.pages.ui.header import header_page
 from model.pages.ui.news_page import news_page
@@ -25,6 +25,9 @@ from model.pages.ui.wedding_page import wedding_page
 from model.pages.ui.dialog_page import dialog_page
 from model.pages.ui.search_page import search_page
 from model.pages.ui.main_page import main_page
+#from model.pages.ui.guides_kids_page import guides_kids_page
+from model.pages.ui.go_with_Russia_page import  go_with_Russia_page
+from model.pages.ui.fashion_Russia_page import  fashion_Russia_page
 
 
 @allure.epic('UI. Pop up menu')
@@ -105,16 +108,16 @@ def test_open_photobank_page_from_menu():
     pop_up_menu_page.open_photobank_page_from_menu()
     photobank_page.opened_photobank_page()
 
-@allure.epic('UI. Pop up menu')
-@allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Open photobank page')
-@allure.tag('ui')
-@allure.severity('normal')
-def test_open_photobank_page_from_menu_list():
-    main_page.open()
-    header_page.open_pop_up_menu()
-    pop_up_menu_page.open_photobank_page_from_menu_list()
-    photobank_page.opened_photobank_page()
+#@allure.epic('UI. Pop up menu')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open photobank page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_photobank_page_from_menu_list():
+ #   main_page.open()
+  #  header_page.open_pop_up_menu()
+   # pop_up_menu_page.open_photobank_page_from_menu_list()
+    #photobank_page.opened_photobank_page()
 
 @allure.epic('UI. Pop up menu')
 @allure.label('owner', 'Elena Ladyzhets')
@@ -126,6 +129,51 @@ def test_open_photobank_RIA_page():
     header_page.open_pop_up_menu()
     pop_up_menu_page.open_photobank_RIA_page()
     photobank_ria_page.opened_photobank_ria_page()
+
+#@allure.epic('UI. Pop up menu')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open guides kids page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_guides_kids_page():
+ #   main_page.open()
+  #  header_page.open_pop_up_menu()
+   # pop_up_menu_page.open_guides_kids_page()
+    #guides_kids_page.opened_guides_kids_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Open go with Russia page')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_open_go_with_Russia_page():
+    main_page.open()
+    header_page.open_pop_up_menu()
+    pop_up_menu_page.open_go_with_Russia_page()
+    go_with_Russia_page.opened_go_with_Russia_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Open fashion Russia page')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_open_fashion_Russia_page():
+    main_page.open()
+    header_page.open_pop_up_menu()
+    pop_up_menu_page.open_fashion_Russia_page()
+    fashion_Russia_page.opened_fashion_Russia_page()
+
+@allure.epic('UI. Pop up menu')
+@allure.label('owner', 'Elena Ladyzhets')
+@allure.feature('Open creative hub page page')
+@allure.tag('ui')
+@allure.severity('normal')
+def test_open_creative_hub_gallery_page():
+    main_page.open()
+    header_page.open_pop_up_menu()
+    pop_up_menu_page.open_creative_hub_gallery_page()
+    creative_hub_page.opened_creative_hub_gallery_page()
+
 
 @allure.epic('UI. Pop up menu')
 @allure.label('owner', 'Elena Ladyzhets')
@@ -237,16 +285,16 @@ def test_open_contacts_page():
     pop_up_menu_page.open_contacts_page()
     contacts_page.opened_contacts_page()
 
-@allure.epic('UI. Pop up menu')
-@allure.label('owner', 'Elena Ladyzhets')
-@allure.feature('Open future page')
-@allure.tag('ui')
-@allure.severity('normal')
-def test_open_future_page():
-    main_page.open()
-    header_page.open_pop_up_menu()
-    pop_up_menu_page.open_future_page()
-    future_page.opened_future_page()
+#@allure.epic('UI. Pop up menu')
+#@allure.label('owner', 'Elena Ladyzhets')
+#@allure.feature('Open future page')
+#@allure.tag('ui')
+#@allure.severity('normal')
+#def test_open_future_page():
+ #   main_page.open()
+  #  header_page.open_pop_up_menu()
+   # pop_up_menu_page.open_future_page()
+    #future_page.opened_future_page()
 
 @allure.epic('UI. Pop up menu')
 @allure.label('owner', 'Elena Ladyzhets')

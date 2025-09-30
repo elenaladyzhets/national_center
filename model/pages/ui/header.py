@@ -25,6 +25,16 @@ class HeaderPage:
             browser.element('.header__nav-link[href="/legacy"]').should(be.visible).click()
             return self
 
+    def open_guides_kids_page_from_header(self):
+        with allure.step ('Open guides kids page from header'):
+            browser.element('.header__nav-link[href="https://guides.kids.russia.ru/"]').should(be.visible).click()
+            return self
+
+    def open_go_with_Russia_page_from_header(self):
+        with allure.step ('Open go with Russia page from header'):
+            browser.element('.header__nav-link[href="https://russia.ru/gowithRussia"]').should(be.visible).click()
+            return self
+
     def open_wedding_page_from_header(self):
         with allure.step ('Open wedding page from header'):
             browser.element('.header__nav-link[href="/wedding"]').should(be.visible).click()

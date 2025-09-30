@@ -5,8 +5,8 @@ class MainPage:
     def open(self):
        with allure.step('Open main page'):
            browser.open('')
-           browser.element('.cookie-popup__button').should(be.visible).click()
            browser.element('.regions-confirm').should(be.visible).click()
+           browser.element('.cookie-popup__button').should(be.visible).click()
            return self
 
     def opened(self):
